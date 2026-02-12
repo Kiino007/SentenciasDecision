@@ -23,6 +23,15 @@ public class Calculadora {
 
             // Leer la opcion del usuario y ejecutar la accion correspondiente con un switch
             var opcion = consola.nextInt();
+
+            // Con esta condicional nos podemos ahorrar en el siguiente codigo pedir tantos valores, ahorramos codigo
+            //if(opcion >= 1 && opcion <= 4) {
+            //    System.out.println("Ingresa el valor 1: ");
+            //    valor1 = consola.nextDouble();
+            //    System.out.println("Ingresa el valor 2: ");
+            //    valor2 = consola.nextDouble();
+            //}
+            
             switch (opcion) {
 
                 // En el caso de suma, solicitar al usuario ingresar dos valores, sumar los valores y mostrar un mensaje con el resultado de la suma
