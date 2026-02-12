@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+
+        var consola = new Scanner(System.in);
+        var salir = false;
+
+        while (!salir) {
+            System.out.print("""
+                    *** Calculadora ***
+                    
+                    1. Suma
+                    2. Resta
+                    3. Multiplicacion
+                    4. Division
+                    5. Salir
+                    
+                    Elija una opcion:\s""");
+            var opcion = consola.nextInt();
+            switch (opcion) {
+                case 1 -> {
+                    System.out.print("Ingresa el valor 1: ");
+                    var valorSuma1 = consola.nextInt();
+
+                    System.out.print("Ingresa el valor 2: ");
+                    var valorSuma2 = consola.nextInt();
+
+                    var resultadoSuma = valorSuma1 + valorSuma2;
+                    System.out.println("El resultado de la suma de: " + valorSuma1 + " + " + valorSuma2 + " = " + resultadoSuma);
+                }
+                case 2 -> {
+                    System.out.print("Ingresa el valor 1: ");
+                    var valorResta1 = consola.nextInt();
+
+                    System.out.print("Ingresa el valor 2: ");
+                    var valorResta2 = consola.nextInt();
+
+                    var resultadoResta = valorResta1 - valorResta2;
+                    System.out.println("El resultado de la resta de: " + valorResta1 + " - " + valorResta2 + " = " + resultadoResta);
+                }
+                case 3 -> {
+                    System.out.print("Ingresa el valor 1: ");
+                    var valorMultiplicacion1 = consola.nextInt();
+
+                    System.out.print("Ingresa el valor 2: ");
+                    var valorMultiplicacion2 = consola.nextInt();
+
+                    var resultadoMultiplicacion = valorMultiplicacion1 * valorMultiplicacion2;
+                    System.out.println("El resultado de la multiplicacion de: " + valorMultiplicacion1 + " * " + valorMultiplicacion2 + " = " + resultadoMultiplicacion);
+                }
+                case 4 -> {
+                    System.out.print("Ingresa el valor 1: ");
+                    var valorDivision1 = consola.nextInt();
+
+                    System.out.print("Ingresa el valor 2: ");
+                    var valorDivision2 = consola.nextInt();
+
+                    if (valorDivision2 == 0 ) {
+                        System.out.println("Denominador 0... No se puede dividir por 0...");
+                    }
+                    else {
+                        var resultadoDivision = valorDivision1 / valorDivision2;
+                        System.out.println("El resultado de la dividion de: " + valorDivision1 + " / " + valorDivision2 + " = " + resultadoDivision);
+                    }
+                }
+                case 5 -> {
+                    System.out.println("Saliendo de la calculadora...");
+                    salir = true;
+                }
+                default -> System.out.println("Opcion invalida...");
+
+            }
+        }
+
+    }
+}
