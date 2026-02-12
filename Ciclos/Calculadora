@@ -8,7 +8,8 @@ public class Calculadora {
 
         while (!salir) {
             System.out.print("""
-                    *** Calculadora ***
+                    \n
+                    \t*** Calculadora ***
                     
                     1. Suma
                     2. Resta
@@ -51,17 +52,17 @@ public class Calculadora {
                 }
                 case 4 -> {
                     System.out.print("Ingresa el valor 1: ");
-                    var valorDivision1 = consola.nextInt();
+                    var valorDivision1 = consola.nextDouble();
 
                     System.out.print("Ingresa el valor 2: ");
-                    var valorDivision2 = consola.nextInt();
+                    var valorDivision2 = consola.nextDouble();
 
                     if (valorDivision2 == 0 ) {
                         System.out.println("Denominador 0... No se puede dividir por 0...");
                     }
                     else {
-                        var resultadoDivision = valorDivision1 / valorDivision2;
-                        System.out.println("El resultado de la dividion de: " + valorDivision1 + " / " + valorDivision2 + " = " + resultadoDivision);
+                        Double resultadoDivision = valorDivision1 / valorDivision2;
+                        System.out.printf("El resultado de la dividion de: %.0f / %.0f = %.2f",valorDivision1, valorDivision2, resultadoDivision);
                     }
                 }
                 case 5 -> {
