@@ -3,9 +3,11 @@ import java.util.Scanner;
 public class Calculadora {
     public static void main(String[] args) {
 
+        // Se define el objeto Scanner para leer la entrada del usuario, una variable booleana para controlar el ciclo y una variable para el saldo inicial
         var consola = new Scanner(System.in);
         var salir = false;
 
+        // Ciclo para mostrar el menu de la calculadora hasta que el usuario decida salir
         while (!salir) {
             System.out.print("""
                     \n
@@ -18,8 +20,12 @@ public class Calculadora {
                     5. Salir
                     
                     Elija una opcion:\s""");
+
+            // Leer la opcion del usuario y ejecutar la accion correspondiente con un switch
             var opcion = consola.nextInt();
             switch (opcion) {
+
+                // En el caso de suma, solicitar al usuario ingresar dos valores, sumar los valores y mostrar un mensaje con el resultado de la suma
                 case 1 -> {
                     System.out.print("Ingresa el valor 1: ");
                     var valorSuma1 = consola.nextInt();
@@ -30,6 +36,8 @@ public class Calculadora {
                     var resultadoSuma = valorSuma1 + valorSuma2;
                     System.out.println("El resultado de la suma de: " + valorSuma1 + " + " + valorSuma2 + " = " + resultadoSuma);
                 }
+
+                // En el caso de resta, solicitar al usuario ingresar dos valores, restar los valores y mostrar un mensaje con el resultado de la resta
                 case 2 -> {
                     System.out.print("Ingresa el valor 1: ");
                     var valorResta1 = consola.nextInt();
@@ -40,6 +48,8 @@ public class Calculadora {
                     var resultadoResta = valorResta1 - valorResta2;
                     System.out.println("El resultado de la resta de: " + valorResta1 + " - " + valorResta2 + " = " + resultadoResta);
                 }
+
+                // En el caso de multiplicacion, solicitar al usuario ingresar dos valores, multiplicar los valores y mostrar un mensaje con el resultado de la multiplicacion
                 case 3 -> {
                     System.out.print("Ingresa el valor 1: ");
                     var valorMultiplicacion1 = consola.nextInt();
@@ -50,6 +60,8 @@ public class Calculadora {
                     var resultadoMultiplicacion = valorMultiplicacion1 * valorMultiplicacion2;
                     System.out.println("El resultado de la multiplicacion de: " + valorMultiplicacion1 + " * " + valorMultiplicacion2 + " = " + resultadoMultiplicacion);
                 }
+
+                // En el caso de division, solicitar al usuario ingresar dos valores, validar que el segundo valor no sea 0, si es asi mostrar un mensaje de error, de lo contrario dividir los valores y mostrar un mensaje con el resultado de la division
                 case 4 -> {
                     System.out.print("Ingresa el valor 1: ");
                     var valorDivision1 = consola.nextDouble();
@@ -65,6 +77,8 @@ public class Calculadora {
                         System.out.printf("El resultado de la dividion de: %.0f / %.0f = %.2f",valorDivision1, valorDivision2, resultadoDivision);
                     }
                 }
+
+                // En el caso de salir, mostrar un mensaje de despedida y cambiar la variable salir a true para terminar el ciclo, en el caso de una opcion invalida, mostrar un mensaje de error
                 case 5 -> {
                     System.out.println("Saliendo de la calculadora...");
                     salir = true;
