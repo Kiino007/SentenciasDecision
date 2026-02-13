@@ -1,0 +1,45 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class JuegoAdivinanza {
+    public static void main(String[] args) {
+
+        final var NUMEROMAXIMOINTENTOS = 10;
+        var consola = new Scanner(System.in);
+        var random = new Random();
+
+        var contador = 0;
+        var numeroRandom = random.nextInt(50);
+        System.out.print("Ingrese un numero del 1 al 50: ");
+        var numero = consola.nextInt();
+        var salir = false;
+
+        while(!salir){
+            contador++;
+            if(numero == numeroRandom){
+                System.out.println("\nFelicitaciones, ganaste la adivinanza: " + numeroRandom + " INGRESASTE: " + numero + " en " + contador + " intentos");
+                salir = true;
+            }
+
+            else if (contador == NUMEROMAXIMOINTENTOS) {
+                System.out.println("\nSuperaste el numero de intentos permitidos: " + NUMEROMAXIMOINTENTOS);
+                salir = true;
+            }
+            else if (numero > 50) {
+                System.out.println("\nIngresaste un numero mayor al 50, numero de intentos: " + contador + " de " + NUMEROMAXIMOINTENTOS);
+                System.out.print("\nIntentalo de nuevo, ingrese numero del 1 al 50: ");
+                numero = consola.nextInt();
+            }
+            else if (numero > numeroRandom ){
+                System.out.println("\nEl valor ingresado: " + numero + " es mayor al numero, numero de intentos: " + contador + " de " + NUMEROMAXIMOINTENTOS);
+                System.out.print("\nIntentalo de nuevo, ingrese numero del 1 al 50: ");
+                numero = consola.nextInt();
+            }
+            else if (numero < numeroRandom) {
+                System.out.println("\nEl valor ingresado: " + numero + " es menor al numero, numero de intentos: " + contador + " de " + NUMEROMAXIMOINTENTOS);
+                System.out.print("\nIntentalo de nuevo, ingrese numero del 1 al 50: ");
+                numero = consola.nextInt();
+            }
+        }
+    }
+}
